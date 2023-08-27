@@ -186,42 +186,137 @@ function changeDes(){
     setTimeout(changeDes, 5000);
 }
 changeDes();
+const detail=[
+    {
+        url:'https://images.pexels.com/photos/716411/pexels-photo-716411.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    {
+        url:'https://images.pexels.com/photos/450212/pexels-photo-450212.jpeg?auto=compress&cs=tinysrgb&w=600'
+    },
+    {
+        url:'https://images.pexels.com/photos/6968548/pexels-photo-6968548.jpeg?auto=compress&cs=tinysrgb&w=600'
+    }
+];
+const studentData=[
+    {
+        id:'Steve John',
+        percentage:`Batch - 2017`,
+        post:` Software Developer`
+    },
+    {
+        id:'Alex Smith',
+        percentage:`Batch - 2014`,
+        post:`CEO - InfraTech`
+    },
+    {
+        id:"Jason Roy",
+        percentage:`Batch - 2015`,
+        post:'CEO - Alexander Hotels'
+    }
+];
+function throttle(func, delay) {
+    let lastExecution = 0;
 
-/* <script>
-  const imageObjects = [
-    { id: 1, src: 'image1.jpg' },
-    { id: 2, src: 'image2.jpg' },
-    { id: 3, src: 'image3.jpg' },
-    { id: 4, src: 'image4.jpg' },
-    { id: 5, src: 'image5.jpg' }
-  ];
+    return function() {
+        const context = this;
+        const args = arguments;
+        const now = Date.now();
 
-  const imageContainer = document.getElementById('slideshow-image');
-  let currentIndex = 0;
+        if (now - lastExecution >= delay) {
+            func.apply(context, args);
+            lastExecution = now;
+        }
+    };
+}
 
-  function changeImage() {
-    const currentImage = imageObjects[currentIndex];
-    imageContainer.src = currentImage.src;
-    currentIndex = (currentIndex + 1) % imageObjects.length; // Cycle through images
-    setTimeout(changeImage, 2000); // Change image every 2 seconds
-  }
+const throttledFunction = throttle(function careerLaunch() {
+    console.log("Function executed!");
 
-  // Start the slideshow
-  changeImage();
-// </script> */
-// const logoImg=[
-//     {
-//         url:'https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNjaG9vbCUyMG5hbWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
-//     }
-// ];
-// const logo=document.querySelectorAll("#nav-1");
-// const imgElements=logoImg.map(itemObj=>{
-//     const item=document.createElement('img');
-//     item.src=itemObj.url;
-//     item.style.height='50px';
-//     item.style.width='400px';
-//     return item
-// });
-// imgElements.forEach((item,i)=>{
-//     logo[i].appendChild(item);
-// });
+        const h1=document.getElementById("flow-md-2");
+        const head=document.createElement('h1');
+        head.textContent="Launch a Sustainable Career & Develop Skills";
+        head.style.textAlign="center";
+        head.style.marginTop="20px";
+        head.style.fontSize='18px';
+        head.style.color="#080707";
+        h1.appendChild(head);
+        const firstDiv=document.createElement("div");
+        firstDiv.setAttribute("class","row mt-4");
+        firstDiv.style.height='430px';
+        firstDiv.style.width="90%";
+        firstDiv.style.margin="auto";
+        firstDiv.style.marginTop='20px';
+        firstDiv.style.display='flex';
+        firstDiv.style.justifyContent="space-evenly";
+        firstDiv.style.alignItems="center";
+        h1.appendChild(firstDiv);
+        for(let i=0;i<3;i++){
+            const rowDiv=document.createElement("div");
+            rowDiv.setAttribute("id",("col-sm-6 col-lg-4 col-xl-3")+(i+0));
+            rowDiv.style.height="400px";
+            rowDiv.style.width="232px";
+            firstDiv.appendChild(rowDiv);
+            for(let i=0;i<4;i++){
+                const parentDiv=document.createElement('div');
+                parentDiv.setAttribute('id',("img1")+(i+0))
+                rowDiv.appendChild(parentDiv);
+            }
+        }
+       const getImgs=document.querySelectorAll("#img10");
+       const getImg=detail.map(items=>{
+        const imgGet=document.createElement("img");
+        imgGet.src=items.url;
+        imgGet.style.height="200px";
+        imgGet.style.width="200px";
+        imgGet.style.borderRadius="50%";
+        return imgGet;
+       });
+       getImg.forEach((imgGet,i)=>{
+        getImgs[i].appendChild(imgGet);
+       });
+       const enterName=document.querySelectorAll("#img11");
+       const getName=studentData.map(items=>{
+        const updateName=document.createElement("p");
+        updateName.style.textAlign="center";
+        updateName.style.marginTop="20px";
+        updateName.style.fontWeight="bold";
+        updateName.textContent=items.id;
+        return updateName;
+       });
+       getName.forEach((updateName,i)=>{
+        enterName[i].appendChild(updateName);
+       });
+       const enterBatch=document.querySelectorAll("#img12");
+       const getBatch=studentData.map(items=>{
+        const updateBatch=document.createElement("p");
+        updateBatch.style.textAlign="center";
+        updateBatch.style.marginTop="20px";
+        updateBatch.style.fontWeight="bold";
+        updateBatch.style.color="#262626";
+        updateBatch.textContent=items.percentage;
+        return updateBatch;
+       });
+       getBatch.forEach((updateBatch,i)=>{
+        enterBatch[i].appendChild(updateBatch);
+       });
+       const enterPost=document.querySelectorAll("#img13");
+       const getPost=studentData.map(items=>{
+        const updatePost=document.createElement("p");
+        updatePost.style.textAlign="center";
+        updatePost.style.marginTop="20px";
+        updatePost.style.fontWeight="bold";
+        updatePost.style.color="#262626";
+        updatePost.textContent=items.post;
+        return updatePost;
+       });
+       getPost.forEach((updatePost,i)=>{
+        enterPost[i].appendChild(updatePost);
+       });
+    }, 1000);
+
+// Call throttledFunction multiple times
+throttledFunction();
+throttledFunction();
+throttledFunction();
+
+

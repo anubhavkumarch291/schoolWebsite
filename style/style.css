@@ -12,6 +12,7 @@
     justify-content: space-around;
     align-items: center;
   border-bottom: 1px solid #2626261c;
+  z-index: 1;
 }
 #navbar>div{
     display: flex;
@@ -71,7 +72,7 @@ a{
     width: 100%;
     background-color: #fcfafa;
     display: flex;
-    margin-top: 0px;
+    margin-top: 50px;
 }
 .text-col-1{
     width: 50%;
@@ -135,9 +136,116 @@ a{
     margin-top: -200px;
     margin-left: 0px;
     border-radius: 20px;
-    position: relative;
     z-index: 1;
     background-color: #edf2fc;
     opacity: 70%;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.span-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 200px;
+    margin-left: 32px;
+    margin-top: 30px;
+}
+.span-1 button{
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    border-style: none;
+    border: 1px solid #cc032a;
+    background-color: #ff0141;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.span-1 button:hover{
+    background-color: #cc032a;
+}
+.span-1 button a{
+    text-decoration: none;
+}
+#driveSection{
+    height: 60px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 24px;
+}
+#driveSection h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1>div{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #ed031e;
+}
+#flowChart{
+    height: 500px;
+    width: 90%;
+    margin: auto;
+    border: 1px solid red;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#flowChart>div{
+    height: 500px;
+    border: 1px solid blue;
+}
+#flow-md-1{
+    width: 30%;
+
+}
+#flow-md-1>div{
+    border:1px solid #cecccd;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 80%;
+    color: #262626af;
+    cursor: pointer;
+}
+#flow-md-1>div:nth-child(1){
+    margin-top: 0px;
+}
+#flow-md-2{
+    width: 70%;
+}
+#flow-md-1 div:hover{
+    color: #ff0141;
+    border: 1px solid #ff0141;
+}
+#flow-md-2{
+    background-color: #f7f7ff;
+}
+#img10{
+    height: 200px;
+    width: 200px;
+    margin-left: 15px;
+    margin-top: 30px;
+    border-radius: 50%;
+}
+#img11,#img12,#img13{
+    height: 30px;
+    width: 200px;
+    margin-left: 15px;
+    margin-top: 15px;
 }
